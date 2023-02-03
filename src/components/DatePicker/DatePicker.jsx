@@ -6,7 +6,7 @@ export default function DatePicker() {
     const [from, setFrom] = useState({d: ('0' + today.getDate()).slice(-2), m: ('0' + (today.getMonth() + 1)).slice(-2), y: today.getFullYear() - 1})
     const [until, setUntil] = useState({d: ('0' + today.getDate()).slice(-2), m: ('0' + (today.getMonth() + 1)).slice(-2), y: today.getFullYear() + 0})
 
-    const [check, setCheck] = useState(true)
+    const [check, setCheck] = useState(false)
 
     const handleChange = () => {
         setCheck(!check);
