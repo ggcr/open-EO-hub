@@ -1,4 +1,5 @@
 import Providers from "../Providers"
+import DatePicker from '../DatePicker/DatePicker'
 
 export default function ResultsHeader({response, loading, setProvider, providers, provider}) {
     if (response && !loading) {
@@ -8,7 +9,10 @@ export default function ResultsHeader({response, loading, setProvider, providers
                     <h1 className="font-inter font-semibold text-2xl text-slate-700 leading-6">Results</h1>
                     <h4 className="font-inter font-normal text-base text-slate-500">Data fetched in <span className="text-indigo-400">0.3s</span></h4>
                 </div>
+                <div className="flex align-middle items-center gap-x-4">
+                <DatePicker />
                 <Providers setProvider={setProvider} providers={providers} provider={provider}/>
+                </div>
             </header>
         )
     } else {
@@ -18,7 +22,10 @@ export default function ResultsHeader({response, loading, setProvider, providers
                     <h1 className="font-inter font-semibold text-2xl text-slate-700 leading-6">Results</h1>
                     <h4 className="animate-pulse h-3 bg-gray-200 rounded-full w-[120px] mt-2.5 mb-1"></h4>
                 </div>
+                <div className="flex align-middle items-center gap-x-4">
+                <DatePicker />
                 <Providers setProvider={setProvider} providers={providers} provider={provider}/>
+                </div>
                 <span className="sr-only">Loading...</span>
             </div>
         )

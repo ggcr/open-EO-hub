@@ -26,7 +26,7 @@ const faqs = [
         <div className="mx-auto max-w-7xl py-16 px-6 sm:py-24 lg:px-8">
           <h2 className="text-5xl font-bold leading-10 tracking-tight text-gray-900">About</h2>
           <p className="mt-6 max-w-2xl text-xl leading-7 text-gray-600">
-            This tool was made by Cristian Gutiérrez as part of its Final Bachelors Thesis @ <a href="http://www.cvc.uab.es/" target="_blank" className="font-semibold text-black">Computer Vision Center</a> at UAB. You can always open an issue into our <a href="https://github.com/ggcr/stac-api-client-react" target="_blank" className="font-semibold text-indigo-600 hover:text-indigo-500">GitHub Repository</a> or send a mail to <a href="mailto:ggcristian@icloud.com" target="_blank" className="font-semibold text-indigo-600 hover:text-indigo-500">ggcristian@icloud.com</a> and I'll get back to you as soon as we can.
+            This tool was made by Cristian Gutiérrez as part of its Final Bachelors Thesis @ <a href="http://www.cvc.uab.es/" target="_blank" className="font-semibold text-black">Computer Vision Center</a> at UAB. You can always open an issue into our <a href="https://github.com/ggcr/open-EO-hub" target="_blank" className="font-semibold text-indigo-600 hover:text-indigo-500">GitHub Repository</a> or send a mail to <a href="mailto:ggcristian@icloud.com" target="_blank" className="font-semibold text-indigo-600 hover:text-indigo-500">ggcristian@icloud.com</a> and I'll get back to you as soon as we can.
           </p>
           <div className="mt-20">
             <dl className="space-y-16 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-16 sm:space-y-0 lg:grid-cols-3 lg:gap-x-10">
