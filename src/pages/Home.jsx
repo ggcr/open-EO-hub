@@ -25,9 +25,11 @@ export default function Home({token}) {
   const [selectedId, setSelectedId] = useState(null)
   const [postreq, setPostreq] = useState()
   const [provider, setProvider] = useState(providers[0])
+  const [dateFilter, setDateFilter] = useState({startDate: null, endDate: null})
 
   useEffect(() => {
     if(userCoords.coordsIn !== null && userCoords.coordsFi !== null) {
+      console.log(dateFilter)
       async function fetchData(setLoading) {
 
           // small offset for pointer selection
@@ -54,7 +56,10 @@ export default function Home({token}) {
               ],
               "limit": "4",
               "page": (page) ? page.toString() : "1",
+              "time": (dateFilter.startDate !== null && dateFilter.endDate !== null) ? dateFilter.startDate + '/' + dateFilter.endDate : "",
             });
+
+            console.log(raw)
 
             var requestOptions = {
               method: 'POST',
@@ -79,8 +84,12 @@ export default function Home({token}) {
               "maxRecords": "4",
               "sortParam": "startDate",
               "sortOrder": "descending",
-              "page": page ?? 1
+              "page": page ?? 1,
             };
+
+            if(dateFilter.startDate !== null && dateFilter.endDate !== null) {
+              params = {...params, startDate: dateFilter.startDate, completionDate: dateFilter.endDate }
+            }
 
             let query = Object.keys(params)
                           .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))
@@ -118,6 +127,7 @@ export default function Home({token}) {
                 providers={providers}
                 provider={provider}
                 token={token}
+                setDateFilter={setDateFilter}
               />
             :
               <Details

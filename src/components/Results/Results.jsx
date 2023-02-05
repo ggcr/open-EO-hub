@@ -12,7 +12,7 @@ function getTitledDate(startDate) {
     return "".concat(d.getFullYear(), ('0' + d.getMonth() + 1).slice(-2), ('0' + d.getDate()).slice(-2), d.getMinutes())
 }
 
-export default function Results({response, loading, setPage, setSelectedId, page, setProvider, providers, provider, token}) {
+export default function Results({response, loading, setPage, setSelectedId, page, setProvider, providers, provider, token, setDateFilter}) {
     const [downloadId, setDownloadId] = useState(null)
 
     useEffect(() => {
@@ -29,7 +29,7 @@ export default function Results({response, loading, setPage, setSelectedId, page
             {(!response && !loading) &&
                 <ResultsEmpty />
             }
-            <ResultsHeader response={response} loading={loading} setProvider={setProvider} providers={providers} provider={provider} />
+            <ResultsHeader response={response} loading={loading} setProvider={setProvider} providers={providers} provider={provider} setDateFilter={setDateFilter} />
             <main className="flex flex-col grow">
                 {(response && !loading) ? response.features.map((f) =>
                 <div className="flex items-center justify-between grow border-t-2 border-slater-500 p-[0.5vw] " key={f.id}>

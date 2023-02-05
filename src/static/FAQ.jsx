@@ -12,7 +12,7 @@ const faqs = [
           "At the moment we are getting data from Element 84 open STAC API in which we can access Sentinel S2A Cloud Optimized. And the brand new Copernicus Data Space Ecosystem API from the European Space Agency (ESA) in which we can access Sentinel 1, Sentinel 2, Sentinel 3, Sentinel 5P, Landsat 5, Landsat 7 and Landsat 8 data.",
     },
     {
-        id: 2,
+        id: 3,
         question: "Is my privacy safe?",
         answer:
           "We request location access of your browser for the Map but we don't store an sensible data, this is a front-end that runs on your browser on the client-side.",
