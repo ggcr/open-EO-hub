@@ -56,7 +56,7 @@ export default function Home({token}) {
               ],
               "limit": "4",
               "page": (page) ? page.toString() : "1",
-              "time": (dateFilter.startDate !== null && dateFilter.endDate !== null) ? dateFilter.startDate + '/' + dateFilter.endDate : "",
+              "datetime": (dateFilter.startDate !== null && dateFilter.endDate !== null) ? dateFilter.startDate + '/' + dateFilter.endDate : "",
             });
 
             console.log(raw)
