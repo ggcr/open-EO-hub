@@ -148,7 +148,7 @@ export default function Home({token}) {
               />
             </div>
           </div>
-        <FAQ />
+
         </main>
       </div>
     </div>
