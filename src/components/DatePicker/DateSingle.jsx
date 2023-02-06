@@ -38,12 +38,12 @@ export default function DateSingle({order, date, setDate}) {
 
     useEffect(() => {
         if(date) {
-            let d = new Date("2000-02-01T12:16:05.644Z")
+            let d = new Date(date)
             dayRef.current.value = d.getDate()
             monthRef.current.value = d.getMonth() + 1
             yearRef.current.value = d.getFullYear()
         }
-    }, [])
+    }, [date])
 
     return(
         <div className={`flex items-center justify-center border-gray-300 w-[8rem] text-xs text-gray-500 border py-2 rounded-md ${order === 1 ? "rounded-r-none " : "rounded-l-none border-l-0"}`}>
