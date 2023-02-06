@@ -2,20 +2,17 @@ import { useState, useRef, useEffect } from 'react';
 import DateEmpty from './DateEmpty';
 import DateSingle from './DateSingle';
 
-export default function DatePicker({setDateFilter}) {
+export default function DatePicker({dateFilter, setDateFilter, check, setCheck}) {
 
-    const [startDate, setStartDate] = useState(null)
-    const [endDate, setEndDate] = useState(null)
-
-    const [check, setCheck] = useState(false)
+    const [startDate, setStartDate] = useState(dateFilter.startDate)
+    const [endDate, setEndDate] = useState(dateFilter.endDate)
 
     const handleChange = (e) => {
         setCheck(!check)
     }
 
     useEffect(() => {
-        console.log("start date: ", startDate, " end date: ", endDate)
-        if(startDate !== null && endDate !== null) {
+        if(startDate !== null || endDate !== null) {
             setDateFilter({startDate: startDate, endDate: endDate})
         }
     }, [startDate, endDate])
@@ -29,8 +26,8 @@ export default function DatePicker({setDateFilter}) {
             { (check)
                 ?
                 <div className="flex">
-                    <DateSingle order={1} setDate={setStartDate} />
-                    <DateSingle order={2} setDate={setEndDate} />
+                    <DateSingle order={1} date={startDate} setDate={setStartDate} />
+                    <DateSingle order={2} date={endDate} setDate={setEndDate} />
                 </div>
                 :
                 <div className="flex">

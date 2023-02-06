@@ -1,23 +1,20 @@
-import { useRef } from "react"
+import { useEffect, useRef } from "react"
 
-export default function DateSingle({order, setDate}) {
+export default function DateSingle({order, date, setDate}) {
     const dayRef = useRef(null);
     const monthRef = useRef(null);
     const yearRef = useRef(null);
 
     const handleChange = (e) => {
         if(e.target.id === "day") {
-            console.log("dayRef: ", dayRef.current.value)
             if(dayRef.current.value > 3 || dayRef.current.value.length == 2) {
                 monthRef.current.focus()
             }
         } else if(e.target.id === "month") {
-            console.log("monthRef: ", monthRef.current.value)
             if(monthRef.current.value > 1 || monthRef.current.value.length == 2) {
                 yearRef.current.focus()
             }
         } else {
-            console.log("yearRef: ", yearRef.current.value)
             if(yearRef.current.value.length == 4) {
                 yearRef.current.blur();
                 let d = new Date()
@@ -29,11 +26,31 @@ export default function DateSingle({order, setDate}) {
         }
     }
 
+    const resetVal = (e) => {
+        if(e.target.id === "day") {
+            dayRef.current.value = ""
+        } else if(e.target.id === "month") {
+            monthRef.current.value = ""
+        } else {
+            yearRef.current.value = ""
+        }
+    }
+
+    useEffect(() => {
+        if(date) {
+            let d = new Date("2000-02-01T12:16:05.644Z")
+            dayRef.current.value = d.getDate()
+            monthRef.current.value = d.getMonth() + 1
+            yearRef.current.value = d.getFullYear()
+        }
+    }, [])
+
     return(
         <div className={`flex items-center justify-center border-gray-300 w-[8rem] text-xs text-gray-500 border py-2 rounded-md ${order === 1 ? "rounded-r-none " : "rounded-l-none border-l-0"}`}>
             <input
                 ref={dayRef}
                 onChange={handleChange}
+                onClick={resetVal}
                 type="text"
                 id="day"
                 placeholder="dd"
@@ -44,6 +61,7 @@ export default function DateSingle({order, setDate}) {
             <input
                 ref={monthRef}
                 onChange={handleChange}
+                onClick={resetVal}
                 type="text"
                 id="month"
                 placeholder="mm"
@@ -54,6 +72,7 @@ export default function DateSingle({order, setDate}) {
             <input
                 ref={yearRef}
                 onChange={handleChange}
+                onClick={resetVal}
                 type="text"
                 id="year"
                 placeholder="yyyy"

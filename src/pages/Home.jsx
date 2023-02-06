@@ -26,10 +26,10 @@ export default function Home({token}) {
   const [postreq, setPostreq] = useState()
   const [provider, setProvider] = useState(providers[0])
   const [dateFilter, setDateFilter] = useState({startDate: null, endDate: null})
+  const [check, setCheck] = useState(false)
 
   useEffect(() => {
     if(userCoords.coordsIn !== null && userCoords.coordsFi !== null) {
-      console.log(dateFilter)
       async function fetchData(setLoading) {
 
           // small offset for pointer selection
@@ -58,8 +58,6 @@ export default function Home({token}) {
               "page": (page) ? page.toString() : "1",
               "datetime": (dateFilter.startDate !== null && dateFilter.endDate !== null) ? dateFilter.startDate + '/' + dateFilter.endDate : "",
             });
-
-            console.log(raw)
 
             var requestOptions = {
               method: 'POST',
@@ -127,7 +125,10 @@ export default function Home({token}) {
                 providers={providers}
                 provider={provider}
                 token={token}
+                dateFilter={dateFilter}
                 setDateFilter={setDateFilter}
+                check={check}
+                setCheck={setCheck}
               />
             :
               <Details
