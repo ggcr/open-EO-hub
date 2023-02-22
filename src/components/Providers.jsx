@@ -24,7 +24,7 @@ export default function Providers({setProvider, providers, provider}) {
       {({ open }) => (
         <div>
           {/* <Listbox.Label className="block text-xs font-medium text-gray-700 py-0">Filter by Provider:</Listbox.Label> */}
-          <div className="relative mt-0 pb-4 w-52 z-[2000]">
+          <div className="relative mt-0 pb-4 w-54 md:w-36 z-[2000]">
             <Listbox.Button className="relative w-full cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm">
               <span className="flex items-center">
                 <span

@@ -110,7 +110,7 @@ export default function Home({token}) {
     <div className="bg-gray-50">
       <div className="relative overflow-hidden">
         <HomeHeader />
-        <main className='relative w-[70vw] md:w-[85vw] sm:w-[95vw] mx-auto z-10 pb-60'>
+        <main className='relative w-[70vw] md:w-[90vw] sm:w-[95vw] mx-auto z-10 pb-60'>
           <div className='max-h-fit bg-gradient-to-r border border-slate-400 from-indigo-500 mx-4 rounded-3xl flex shadow-2xl'>
             <div className='w-1/2 m-3 mr-0 pl-3 pr-2 py-2 text-2xl bg-white rounded-l-2xl overflow-clip'>
             { (!selectedId)
