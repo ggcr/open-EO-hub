@@ -11,6 +11,8 @@ const providers = [
   { id: 'Landsat5', name: 'Landsat 5', color: 'bg-yellow-300' },
   { id: 'Landsat7', name: 'Landsat 7', color: 'bg-slate-300' },
   { id: 'Landsat8', name: 'Landsat 8', color: 'bg-sky-300' },
+  { id: 'CopDemGlo30', name: 'DEM GLO-30', color: 'bg-orange-300' },
+  { id: 'CopDemGlo90', name: 'DEM GLO-90', color: 'bg-yellow-300' },
 ]
 
 function classNames(...classes) {

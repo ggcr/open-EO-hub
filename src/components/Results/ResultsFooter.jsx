@@ -3,8 +3,8 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 export default function ResultsFooter({response, loading, setPage, pageprop}) {
     if (response && !loading) {
         let page=(response.context) ? response.context.page : pageprop ?? 1
-        let limit=(response.context) ? response.context.limit : response.properties.itemsPerPage
-        let total=(response.context) ? response.numberMatched : response.properties.totalResults
+        let limit=4
+        let total=(response.context) ? response.numberMatched : (response.properties && response.properties.totalResults) ? response.properties.totalResults : 999
 
         return (
             <footer className="flex items-center justify-between font-sans font-normal text-base px-2 pb-2 pt-3 border-t-2">
