@@ -15,5 +15,5 @@ This a multi-source API client for open-access and free Earth Obserbational Data
 
 At the moment we are getting data from Element 84 open STAC API in which we can access Sentinel S2A Cloud Optimized. And the brand new Copernicus Data Space Ecosystem API from the European Space Agency (ESA) in which we can access Sentinel 1, Sentinel 2, Sentinel 3, Sentinel 5P, Landsat 5, Landsat 7 and Landsat 8 data.
 
-![](https://i.gyazo.com/90f2ce753aaa50f4823d601e6f30369d.png)
+![](https://i.gyazo.com/0bcad2537c3e0321d53835fe8ce11df6.png)
 
